@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    maven 'mvn-version'
+    maven 'mvn-3.5.2'
   }
 
   stages {
@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     echo "Build image with tag: ${env.BUILD_ID}"
-                    myapp = docker.build("jaganthoutam/ledger-service:${env.BUILD_ID}", "--build-arg VERSION='${env.BUILD_ID}' .")
+                    myapp = docker.build("banaagmb/ledger-service:${env.BUILD_ID}", "--build-arg VERSION='${env.BUILD_ID}' .")
                 }
             }
         }
