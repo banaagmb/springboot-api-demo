@@ -27,3 +27,7 @@ pipeline {
                 script {
                     step.pushImage()
                     }
+               }
+          }
+     }
+ }
